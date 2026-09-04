@@ -1,11 +1,10 @@
 import os
-
-
 os.environ['OPENBLAS_NUM_THREADS'] = '1'
-
-
-from sklearn.preprocessing import OrdinalEncoder
 from sklearn.naive_bayes import CategoricalNB
+from sklearn.preprocessing import OrdinalEncoder
+
+
+
 
 if __name__ == '__main__':
     dataset = [['C', 'S', 'O', '1', '2', '1', '1', '2', '1', '2', '0'],
@@ -1385,9 +1384,10 @@ if __name__ == '__main__':
                ['H', 'S', 'X', '1', '2', '1', '1', '1', '1', '1', '0'],
                ['H', 'S', 'X', '2', '2', '1', '1', '2', '1', '1', '0'],
                ['C', 'S', 'O', '1', '2', '1', '2', '2', '1', '1', '0']]
-    
+
+
     record = list(input().split())
-    
+
     X = [row[:-1] for row in dataset]
     Y = [row[-1] for row in dataset]
 
@@ -1395,9 +1395,10 @@ if __name__ == '__main__':
     encoder.fit(X)
     X_encoded = encoder.transform(X)
 
-    split = len(X)*75//100
+    split = len(X) * 75 //100
     X_train = X_encoded[:split]
     Y_train = Y[:split]
+
     X_test = X_encoded[split:]
     Y_test = Y[split:]
 
@@ -1406,9 +1407,11 @@ if __name__ == '__main__':
 
     acc = classifier.score(X_test, Y_test)
     print(acc)
-
     record_encoded = encoder.transform([record])
     pred = classifier.predict(record_encoded)
     probabilities = classifier.predict_proba(record_encoded)
+
     print(pred[0])
     print(probabilities)
+
+
