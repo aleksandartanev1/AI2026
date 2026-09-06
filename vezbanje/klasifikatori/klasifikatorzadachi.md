@@ -38,12 +38,12 @@ pred = classifier.predict([record])
 
 Не мора да разбираш математика зад нив — само запомни "етикета":
 
-| Класификатор | Import | Кратко "паметило" |
-|---|---|---|
-| `GaussianNB` | `sklearn.naive_bayes` | Брз, наивен, добар за старт |
+| Класификатор            | Import | Кратко "паметило" |
+|-------------------------|---|---|
+| `GaussianNB`            | `sklearn.naive_bayes` | Брз, наивен, добар за старт |
 | `DecisionTreeClassifier` | `sklearn.tree` | Дрво на одлуки, има `feature_importances_` |
 | `RandomForestClassifier` | `sklearn.ensemble` | "Многу дрвца гласаат" — `n_estimators` = колку дрвца |
-| `MLPClassifier` | `sklearn.neural_network` | Невронска мрежа, треба SKALIRANJE пред неа! |
+| `MLPClassifier`         | `sklearn.neural_network` | Невронска мрежа, треба SKALIRANJE пред неа! |
 
 **Правило со ѕвездичка:** MLP (невронска мрежа) речиси секогаш бара `MinMaxScaler` или `StandardScaler` пред неа. Другите (Bayes, Tree, Forest) — не им треба скалирање.
 
